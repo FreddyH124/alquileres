@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Alquiler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Reserva.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Modelo del dominio">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/factory/FactoriaRepositorios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/factory/FactoriaServicios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/IIdentificable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/repository/IRepositorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/repository/IRepositorioString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioEstaciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Bicicleta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/EntidadNoEncontrada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/NotAllowedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarioMemoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioEstaciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/PropertiesReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/repositorios.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/servicios.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -27,6 +46,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2cgcGryaWqY4ReJlNlE26LDsQ7s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,17 +63,44 @@
     "Maven.alquileres [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/herna/OneDrive/Escritorio/EnOneDrive/UNIVERSIDAD/UNIVERSIDAD23-24/ARSO/alquileres/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\resources" />
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\repository" />
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\interfaces" />
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\services" />
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\persistence" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.arso.services.factory" />
+      <recent name="org.arso.utils" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_392-corretto-1.8.0_392-3183f394aec4-cb300fc7" />
+        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +109,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708536574415</updated>
-      <workItem from="1708536575566" duration="3503000" />
+      <workItem from="1708536575566" duration="3691000" />
+      <workItem from="1708623308291" duration="2573000" />
+      <workItem from="1709572223334" duration="1629000" />
+      <workItem from="1709574957430" duration="142000" />
+      <workItem from="1709575228225" duration="5144000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -69,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708536685503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modelo del dominio">
+      <option name="closed" value="true" />
+      <created>1708543827621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708543827621</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Modelo del dominio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modelo del dominio" />
   </component>
 </project>

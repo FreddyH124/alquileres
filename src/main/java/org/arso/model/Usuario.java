@@ -1,11 +1,13 @@
 package org.arso.model;
 
+import org.arso.interfaces.IIdentificable;
+
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class Usuario {
+public class Usuario implements IIdentificable {
     private String id;
     private List<Reserva> reservas;
     private List<Alquiler> alquileres;
@@ -14,10 +16,12 @@ public class Usuario {
 
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
@@ -25,6 +29,10 @@ public class Usuario {
     public List<Reserva> getReservas() {
         return reservas;
     }
+
+    public void addReserva(Reserva reserva){ reservas.add(reserva);}
+
+    public void removeReserva(Reserva reserva) { reservas.remove(reserva); }
 
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
@@ -34,11 +42,15 @@ public class Usuario {
         return alquileres;
     }
 
+    public void addAlquiler(Alquiler alquiler) { alquileres.add(alquiler); }
+
+    public void removeAlquiler(Alquiler alquiler) { alquileres.remove(alquiler); }
+
     public void setAlquileres(List<Alquiler> alquileres) {
         this.alquileres = alquileres;
     }
 
-    public long getreservasCaducadas(){
+    public long getReservasCaducadas(){
         return reservas.stream()
                 .filter(Reserva::isCaducada)
                 .count();
