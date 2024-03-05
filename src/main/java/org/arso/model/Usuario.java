@@ -3,6 +3,7 @@ package org.arso.model;
 import org.arso.interfaces.IIdentificable;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +14,8 @@ public class Usuario implements IIdentificable {
     private List<Alquiler> alquileres;
 
     public Usuario(){
-
+        reservas = new ArrayList<>();
+        alquileres = new ArrayList<>();
     }
 
     @Override
@@ -98,5 +100,14 @@ public class Usuario implements IIdentificable {
                 .count();
 
         return count >= 3;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id='" + id + '\'' +
+                ", reservas=" + reservas +
+                ", alquileres=" + alquileres +
+                '}';
     }
 }

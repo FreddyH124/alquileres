@@ -18,10 +18,9 @@ import java.util.stream.Collectors;
 
 public class ServicioAlquileres implements IServicioAlquileres {
 
-    public Usuario getUsuario(String idUsuario){
-        //TODO obtener usuario
-        RepositorioUsuarioMemoria repositorio = FactoriaRepositorios.getRepositorio(Usuario.class);
+    RepositorioUsuarioMemoria repositorio = FactoriaRepositorios.getRepositorio(Usuario.class);
 
+    public Usuario getUsuario(String idUsuario){
         try {
             return repositorio.getById(idUsuario);
         } catch (EntidadNoEncontrada e) {
@@ -34,7 +33,7 @@ public class ServicioAlquileres implements IServicioAlquileres {
     public void reservarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
         Usuario usuario = getUsuario(idUsuario);
 
-        if(usuario.getReservaActiva() == null || usuario.getAlquilerActivo() == null){
+        if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
             throw new NotAllowedException("El usuario ya tiene una reserva o alquiler en estado activo");
         }
 
@@ -50,6 +49,11 @@ public class ServicioAlquileres implements IServicioAlquileres {
         usuario.addReserva(reserva);
 
         //Todo actualizar usuario en la bbdd
+        try {
+            repositorio.update(usuario);
+        } catch (EntidadNoEncontrada e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -70,13 +74,18 @@ public class ServicioAlquileres implements IServicioAlquileres {
         usuario.removeReserva(reserva);
 
         //Todo actualizar usuario en la bbdd
+        try {
+            repositorio.update(usuario);
+        } catch (EntidadNoEncontrada e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void alquilarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
         Usuario usuario = getUsuario(idUsuario);
 
-        if(usuario.getReservaActiva() == null || usuario.getAlquilerActivo() == null){
+        if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
             throw new NotAllowedException("El usuario ya tiene una reserva o alquiler en estado activo");
         }
 
@@ -91,6 +100,11 @@ public class ServicioAlquileres implements IServicioAlquileres {
         usuario.addAlquiler(alquiler);
 
         //Todo actualizar usuario en la bbdd
+        try {
+            repositorio.update(usuario);
+        } catch (EntidadNoEncontrada e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -122,6 +136,11 @@ public class ServicioAlquileres implements IServicioAlquileres {
         alquiler.setFin(LocalDateTime.now());
 
         //Todo actualizar usuario en la bbdd
+        try {
+            repositorio.update(usuario);
+        } catch (EntidadNoEncontrada e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -134,6 +153,13 @@ public class ServicioAlquileres implements IServicioAlquileres {
 
         for(Reserva r : lista){
             usuario.removeReserva(r);
+        }
+
+        //Todo actualizar usuario en la bbdd
+        try {
+            repositorio.update(usuario);
+        } catch (EntidadNoEncontrada e) {
+            throw new RuntimeException(e);
         }
     }
 }

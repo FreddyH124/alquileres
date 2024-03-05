@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Modelo del dominio">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/factory/FactoriaRepositorios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/factory/FactoriaServicios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/IIdentificable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/repository/IRepositorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/repository/IRepositorioString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioEstaciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Bicicleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/EntidadNoEncontrada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/NotAllowedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarioMemoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioEstaciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/PropertiesReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/repositorios.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/servicios.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/repositorios.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repositorios.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/servicios.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/servicios.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ProgramEjercicio1.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.alquileres [clean].executor": "Run",
     "Maven.alquileres [install].executor": "Run",
@@ -93,6 +77,26 @@
       <recent name="org.arso.utils" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="ProgramEjercicio1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.arso.tests.ProgramEjercicio1" />
+      <module name="alquileres" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.arso.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProgramEjercicio1" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -113,7 +117,8 @@
       <workItem from="1708623308291" duration="2573000" />
       <workItem from="1709572223334" duration="1629000" />
       <workItem from="1709574957430" duration="142000" />
-      <workItem from="1709575228225" duration="5144000" />
+      <workItem from="1709575228225" duration="5280000" />
+      <workItem from="1709653964970" duration="2559000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -131,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708543827621</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo">
+      <option name="closed" value="true" />
+      <created>1709580488925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709580488925</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +164,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Modelo del dominio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modelo del dominio" />
+    <MESSAGE value="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

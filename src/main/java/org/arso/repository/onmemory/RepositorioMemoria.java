@@ -17,7 +17,7 @@ public class RepositorioMemoria<T extends IIdentificable> implements IRepositori
     @Override
     public String add(T entity) {
         String id = entity.getId();
-        if(id.isEmpty()){
+        if(id == null || id.isEmpty()){
             id = String.valueOf(this.id++);
             entity.setId(id);
         }
