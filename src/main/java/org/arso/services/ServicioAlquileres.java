@@ -20,6 +20,7 @@ public class ServicioAlquileres implements IServicioAlquileres {
 
     RepositorioUsuarioMemoria repositorio = FactoriaRepositorios.getRepositorio(Usuario.class);
 
+    @Override
     public Usuario getUsuario(String idUsuario){
         try {
             return repositorio.getById(idUsuario);
@@ -30,15 +31,15 @@ public class ServicioAlquileres implements IServicioAlquileres {
         }
     }
     @Override
-    public void reservarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
+    public void reservarBicicleta(String idUsuario, String idBicicleta) throws IllegalStateException {
         Usuario usuario = getUsuario(idUsuario);
 
         if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
-            throw new NotAllowedException("El usuario ya tiene una reserva o alquiler en estado activo");
+            throw new IllegalStateException("El usuario ya tiene una reserva o alquiler en estado activo");
         }
 
         if(usuario.isBloqueado() || usuario.superaTiempoUso()){
-            throw new NotAllowedException("El usuario esta bloqueado o supera el tiempo de uso");
+            throw new IllegalStateException("El usuario esta bloqueado o supera el tiempo de uso");
         }
 
         Reserva reserva = new Reserva();
@@ -57,13 +58,13 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void confirmarReserva(String idUsuario) throws NotAllowedException {
+    public void confirmarReserva(String idUsuario) throws IllegalStateException {
         Usuario usuario = getUsuario(idUsuario);
 
         Reserva reserva = usuario.getReservaActiva();
 
         if(reserva == null){
-            throw new NotAllowedException("El usuario no una reserva pendientes de confirmar");
+            throw new IllegalStateException("El usuario no tiene una reserva pendiente de confirmar");
         }
 
         Alquiler alquiler = new Alquiler();
@@ -82,15 +83,15 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void alquilarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
+    public void alquilarBicicleta(String idUsuario, String idBicicleta) throws IllegalStateException {
         Usuario usuario = getUsuario(idUsuario);
 
         if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
-            throw new NotAllowedException("El usuario ya tiene una reserva o alquiler en estado activo");
+            throw new IllegalStateException("El usuario ya tiene una reserva o alquiler en estado activo");
         }
 
         if(usuario.isBloqueado() || usuario.superaTiempoUso()){
-            throw new NotAllowedException("El usuario esta bloqueado o supera el tiempo de uso");
+            throw new IllegalStateException("El usuario esta bloqueado o supera el tiempo de uso");
         }
 
         Alquiler alquiler = new Alquiler();
@@ -114,19 +115,19 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void dejarBicicleta(String idUsuario, String idEstacion) throws NotAllowedException {
+    public void dejarBicicleta(String idUsuario, String idEstacion) throws IllegalStateException {
         Usuario usuario = getUsuario(idUsuario);
 
         Alquiler alquiler = usuario.getAlquilerActivo();
 
         if(alquiler == null){
-            throw new NotAllowedException("El usuario no una reserva pendientes de confirmar");
+            throw new IllegalStateException("El usuario no una reserva pendientes de confirmar");
         }
 
         IServicioEstaciones servicio = FactoriaServicios.getServicio(IServicioEstaciones.class);
 
         if(!servicio.hayHueco(idEstacion)){
-            throw new NotAllowedException("No se puede dejar la bicicleta en la estacion solicitada, no hay espacio");
+            throw new IllegalStateException("No se puede dejar la bicicleta en la estacion solicitada, no hay espacio");
         }
 
         //Todo obtener la bicicleta
