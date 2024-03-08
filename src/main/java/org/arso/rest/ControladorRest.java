@@ -1,5 +1,7 @@
 package org.arso.rest;
 
+import javax.annotation.security.RolesAllowed;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,6 +16,10 @@ import javax.ws.rs.core.UriInfo;
 
 import org.arso.factory.FactoriaServicios;
 import org.arso.interfaces.services.IServicioAlquileres;
+import org.arso.interfaces.services.IServicioEstaciones;
+import org.arso.services.ServicioEstaciones;
+
+import io.jsonwebtoken.Claims;
 
 @Path("alquileres")
 public class ControladorRest {
@@ -23,12 +29,23 @@ public class ControladorRest {
 	@Context
 	private UriInfo uriInfo;
 	
+	@Context
+	private HttpServletRequest servletRequest;
+	
+	//Poner @PermitAll en el servicio de login
 	//http://localhost:8080/api/alquileres/1
 	
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
+	@RolesAllowed("administrador")
 	public Response getUsuario( @PathParam("id") String id) throws Exception {
+		
+		if (this.servletRequest.getAttribute("claims") != null) {
+			Claims claims = (Claims) this.servletRequest.getAttribute("claims");
+			System.out.println("Usuario autenticado: " + claims.getSubject());
+			System.out.println("Roles: " + claims.get("roles"));
+			}
 		
 		try {
 			servicioAlquileres.getUsuario(id);

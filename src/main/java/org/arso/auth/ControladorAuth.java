@@ -49,5 +49,7 @@ public class ControladorAuth {
 		
 		return claims;
 	}
+	
+	//TODO terminar proceso y hacer uno para el usuario normal
 
 }
