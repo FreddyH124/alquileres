@@ -23,7 +23,7 @@ public class ControladorRest {
 	@Context
 	private UriInfo uriInfo;
 	
-	//http://localhost:8080/api/alquileres
+	//http://localhost:8080/api/alquileres/1
 	
 	@GET
 	@Path("{id}")
@@ -43,6 +43,7 @@ public class ControladorRest {
 	
 	@POST
 	@Path("{id}/reserva/{idBicicleta}")
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response reservarBicileta( @PathParam("id") String id,
 			@PathParam("idBicicleta") String idBicicleta) throws Exception {
 		
@@ -57,7 +58,7 @@ public class ControladorRest {
 	}
 	
 	@PUT
-	@Path("{id}//reserva/confirmar")
+	@Path("{id}/reserva/confirmar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response confirmarReserva(@PathParam("id") String id) throws Exception {
 		try {
@@ -69,7 +70,45 @@ public class ControladorRest {
 		return Response.status(Response.Status.OK).build();
 	}
 	
-	//Seguir con alquilarBicicleta
+	@POST
+	@Path("{id}/reserva/alquilar/{idBicicleta}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response alquilarBicicleta(@PathParam("id") String id,
+		@PathParam("idBicicleta") String idBicicleta) throws Exception {
+		try {
+			servicioAlquileres.reservarBicicleta(id, idBicicleta);
+		} catch (IllegalStateException e) {
+			Response.status(Response.Status.BAD_REQUEST).build();
+		}
+		
+		return Response.status(Response.Status.OK).build();
+	}
+	
+	@PUT
+	@Path("{id}/reserva/dejar/{idEstacion}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response dejarBicicleta(@PathParam("id") String id,
+		@PathParam("idEstacion") String idEstacion) throws Exception {
+		try {
+			servicioAlquileres.dejarBicicleta(id, idEstacion);
+		} catch (IllegalStateException e) {
+			Response.status(Response.Status.BAD_REQUEST).build();
+		}
+		
+		return Response.status(Response.Status.OK).build();
+	}
+	
+	@PUT
+	@Path("{id}/reserva/liberar")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response liberarBloqueo(@PathParam("id") String id) throws Exception {
+		try {
+			servicioAlquileres.liberarBloqueo(id);
+		} catch (IllegalStateException e) {
+			Response.status(Response.Status.BAD_REQUEST).build();
+		}
+		return Response.status(Response.Status.OK).build();
+	}
 	
 	
 	
