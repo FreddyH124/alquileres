@@ -17,10 +17,10 @@ public class ProgramEjercicio2 {
         IServicioAlquileres servicio = FactoriaServicios.getServicio(IServicioAlquileres.class);
 
         //Reservar bicicleta con repositorio en memoria
-        servicio.reservarBicicleta("1", "5");
+        //servicio.reservarBicicleta("1", "5");
 
         //Confirmar la reserva activa del usuario
-        //servicio.confirmarReserva("1");
+        servicio.confirmarReserva("1");
 
         //Alquilar bicicleta sin reserva previa
         //Para que funcione se deben comentar los dos metodos anteriores del servicio

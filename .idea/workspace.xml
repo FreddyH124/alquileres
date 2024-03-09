@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Creado programa de prueba, y arreglado algunos errores relacionados con saber cuando hay una reserva o alquiler activo">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alquileres.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/IEntidadParseable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/AlquilerEntidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/ReservaEntidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/UsuarioEntidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/jpa/RepositorioJPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/DateTimeConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/EntityManagerHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Añadido todo el soporte JPA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Alquiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Alquiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Reserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/repositorios.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repositorios.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +44,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ProgramEjercicio1.executor": "Debug",
-    "Application.ProgramEjercicio2.executor": "Debug",
+    "Application.ProgramEjercicio2.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.alquileres [clean].executor": "Run",
     "Maven.alquileres [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "soporteJPA",
+    "git-widget-placeholder": "soporteJPA.mergeTokenJWT",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/herna/OneDrive/Escritorio/EnOneDrive/UNIVERSIDAD/UNIVERSIDAD23-24/ARSO/alquileres/src/main/resources",
@@ -231,44 +214,23 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarios.java</url>
           <line>12</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>146</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/arso/repository/jpa/RepositorioJPA.java</url>
           <line>40</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>59</line>
+          <properties class="org.arso.services.ServicioAlquileres" method="confirmarReserva">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,9 +5,9 @@ import org.arso.repository.NotAllowedException;
 import org.arso.repository.RepositorioException;
 
 public interface IServicioAlquileres {
-	Usuario getUsuario(String idUsuario);
+	Usuario getUsuario(String idUsuario) throws RepositorioException;
     void reservarBicicleta(String idUsuario, String idBicicleta) throws IllegalStateException, RepositorioException;
-    void confirmarReserva(String idUsuario) throws IllegalStateException;
+    void confirmarReserva(String idUsuario) throws IllegalStateException, RepositorioException;
     void alquilarBicicleta(String idUsuario, String idBicicleta) throws IllegalStateException, RepositorioException;
 
     Usuario historialUsuario(String idUsuario) throws RepositorioException;
