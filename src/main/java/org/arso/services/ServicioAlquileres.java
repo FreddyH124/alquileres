@@ -7,10 +7,8 @@ import org.arso.model.Alquiler;
 import org.arso.model.Bicicleta;
 import org.arso.model.Reserva;
 import org.arso.model.Usuario;
-import org.arso.repository.EntidadNoEncontrada;
-import org.arso.repository.NotAllowedException;
+import org.arso.repository.*;
 import org.arso.factory.FactoriaServicios;
-import org.arso.repository.RepositorioUsuarioMemoria;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,19 +16,20 @@ import java.util.stream.Collectors;
 
 public class ServicioAlquileres implements IServicioAlquileres {
 
-    RepositorioUsuarioMemoria repositorio = FactoriaRepositorios.getRepositorio(Usuario.class);
+    RepositorioUsuarios repositorio = FactoriaRepositorios.getRepositorio(Usuario.class);
 
-    public Usuario getUsuario(String idUsuario){
+    public Usuario getUsuario(String idUsuario) throws RepositorioException {
         try {
             return repositorio.getById(idUsuario);
         } catch (EntidadNoEncontrada e) {
             Usuario usuario = new Usuario();
+            usuario.setId(idUsuario);
             repositorio.add(usuario);
             return usuario;
         }
     }
     @Override
-    public void reservarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
+    public void reservarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException, RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
 
         if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
@@ -57,7 +56,7 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void confirmarReserva(String idUsuario) throws NotAllowedException {
+    public void confirmarReserva(String idUsuario) throws NotAllowedException, RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
 
         Reserva reserva = usuario.getReservaActiva();
@@ -82,7 +81,7 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void alquilarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException {
+    public void alquilarBicicleta(String idUsuario, String idBicicleta) throws NotAllowedException, RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
 
         if(usuario.getReservaActiva() != null || usuario.getAlquilerActivo() != null){
@@ -108,13 +107,13 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public Usuario historialUsuario(String idUsuario) {
+    public Usuario historialUsuario(String idUsuario) throws RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
         return usuario;
     }
 
     @Override
-    public void dejarBicicleta(String idUsuario, String idEstacion) throws NotAllowedException {
+    public void dejarBicicleta(String idUsuario, String idEstacion) throws NotAllowedException, RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
 
         Alquiler alquiler = usuario.getAlquilerActivo();
@@ -144,7 +143,7 @@ public class ServicioAlquileres implements IServicioAlquileres {
     }
 
     @Override
-    public void liberarBloqueo(String idUsuario) {
+    public void liberarBloqueo(String idUsuario) throws RepositorioException {
         Usuario usuario = getUsuario(idUsuario);
 
         List<Reserva> lista = usuario.getReservas().stream()

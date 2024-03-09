@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" afterDir="false" />
+    <list default="true" id="22ce43c3-e489-4376-a13d-52e70729c0f9" name="Changes" comment="Creado programa de prueba, y arreglado algunos errores relacionados con saber cuando hay una reserva o alquiler activo">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alquileres.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/IEntidadParseable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/AlquilerEntidad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/ReservaEntidad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/persistence/jpa/UsuarioEntidad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/jpa/RepositorioJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/DateTimeConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/arso/utils/EntityManagerHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/interfaces/services/IServicioAlquileres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Alquiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Alquiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Reserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/repository/onmemory/RepositorioMemoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/repositorios.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repositorios.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/servicios.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/servicios.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +41,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -42,13 +61,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ProgramEjercicio1.executor": "Debug",
+    "Application.ProgramEjercicio2.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.alquileres [clean].executor": "Run",
     "Maven.alquileres [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "soporteJPA",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/herna/OneDrive/Escritorio/EnOneDrive/UNIVERSIDAD/UNIVERSIDAD23-24/ARSO/alquileres/src/main/resources",
@@ -67,17 +87,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\resources" />
+      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\persistence" />
       <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\repository" />
       <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\interfaces" />
       <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\services" />
-      <recent name="C:\Users\herna\OneDrive\Escritorio\EnOneDrive\UNIVERSIDAD\UNIVERSIDAD23-24\ARSO\alquileres\src\main\java\org\arso\persistence" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.arso.services.factory" />
       <recent name="org.arso.utils" />
+      <recent name="org.arso.services.factory" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ProgramEjercicio2">
     <configuration name="ProgramEjercicio1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.arso.tests.ProgramEjercicio1" />
       <module name="alquileres" />
@@ -91,8 +111,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProgramEjercicio2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.arso.tests.ProgramEjercicio2" />
+      <module name="alquileres" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.arso.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProgramEjercicio2" />
         <item itemvalue="Application.ProgramEjercicio1" />
       </list>
     </recent_temporary>
@@ -118,7 +152,12 @@
       <workItem from="1709572223334" duration="1629000" />
       <workItem from="1709574957430" duration="142000" />
       <workItem from="1709575228225" duration="5280000" />
-      <workItem from="1709653964970" duration="2559000" />
+      <workItem from="1709653964970" duration="4494000" />
+      <workItem from="1709716607975" duration="4258000" />
+      <workItem from="1709721687109" duration="1245000" />
+      <workItem from="1709748559381" duration="5769000" />
+      <workItem from="1709836036955" duration="814000" />
+      <workItem from="1709980140067" duration="1827000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -144,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709580488925</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creado programa de prueba, y arreglado algunos errores relacionados con saber cuando hay una reserva o alquiler activo">
+      <option name="closed" value="true" />
+      <created>1709657309456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709657309456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +202,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="soporteJPA" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -165,20 +224,51 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Modelo del dominio" />
     <MESSAGE value="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terminado todo lo referente al ejercicio uno, solo a falta de implementar el programa de prueba, y probarlo" />
+    <MESSAGE value="Creado programa de prueba, y arreglado algunos errores relacionados con saber cuando hay una reserva o alquiler activo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creado programa de prueba, y arreglado algunos errores relacionados con saber cuando hay una reserva o alquiler activo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/arso/tests/ProgramEjercicio1.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/repository/RepositorioUsuarios.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/services/ServicioAlquileres.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/arso/repository/jpa/RepositorioJPA.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

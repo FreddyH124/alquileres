@@ -1,6 +1,10 @@
 package org.arso.model;
 
+import org.arso.interfaces.IEntidadParseable;
 import org.arso.interfaces.IIdentificable;
+import org.arso.persistence.jpa.AlquilerEntidad;
+import org.arso.persistence.jpa.ReservaEntidad;
+import org.arso.persistence.jpa.UsuarioEntidad;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -8,7 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class Usuario implements IIdentificable {
+public class Usuario implements IIdentificable, IEntidadParseable<UsuarioEntidad> {
     private String id;
     private List<Reserva> reservas;
     private List<Alquiler> alquileres;
@@ -109,5 +113,26 @@ public class Usuario implements IIdentificable {
                 ", reservas=" + reservas +
                 ", alquileres=" + alquileres +
                 '}';
+    }
+
+
+    @Override
+    public UsuarioEntidad toEntidad() {
+        UsuarioEntidad usuarioEntidad = new UsuarioEntidad();
+        usuarioEntidad.setId(this.id);
+
+        List<ReservaEntidad> reservasEntidad = new ArrayList<>();
+        for(Reserva reserva : reservas){
+            reservasEntidad.add(reserva.toEntidad());
+        }
+        usuarioEntidad.setReservas(reservasEntidad);
+
+        List<AlquilerEntidad> alquileresEntidad = new ArrayList<>();
+        for(Alquiler alquiler : alquileres){
+            alquileresEntidad.add(alquiler.toEntidad());
+        }
+        usuarioEntidad.setAlquileres(alquileresEntidad);
+
+        return usuarioEntidad;
     }
 }
